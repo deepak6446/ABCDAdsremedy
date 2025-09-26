@@ -60,3 +60,11 @@ This is a REST API service built in Go that provides country information by leve
 ```bash
 curl -X GET "http://localhost:8000/api/countries/search?name=Germany"
 ```
+
+## How to Test
+
+**Run all unit tests, including race condition checks, and generate a coverage report.**
+
+```bash
+go test -coverprofile=coverage.out ./...
+```
