@@ -21,7 +21,6 @@ type HTTPClient interface {
 	Post(ctx context.Context, url string, body interface{}, responseBody interface{}) error
 }
 
-// ... Increment struct remains the same ...
 type Increment struct {
 	ID     string `json:"id"`
 	NodeID string `json:"node_id"`
@@ -48,7 +47,7 @@ func NewCounter(selfID string, registry PeerRegistry, client HTTPClient) *Counte
 		selfID:         selfID,
 	}
 }
-// ... The rest of the file (IncrementAndPropagate, ApplyIncrement, Value, propagate) remains the same ...
+
 // IncrementAndPropagate increments the local counter and propagates the change to peers.
 func (c *Counter) IncrementAndPropagate() {
 	increment := Increment{

@@ -31,7 +31,6 @@ func (m *MockClient) GetCountryByName(ctx context.Context, name string) (*domain
 	return m.GetCountryByNameFunc(ctx, name)
 }
 
-// ... the rest of the tests are now valid ...
 func TestSearch_CacheHit(t *testing.T) {
 	mockCountry := &domain.Country{Name: "India"}
 	clientCalled := false
@@ -95,7 +94,6 @@ func TestSearch_CacheMiss_Success(t *testing.T) {
 	assert.True(t, cacheSetCalled, "Cache.Set should be called on cache miss")
 }
 
-// ... other service tests remain the same and are now correct
 func TestSearch_CacheMiss_ClientError(t *testing.T) {
 	clientError := errors.New("API is down")
 	cacheSetCalled := false

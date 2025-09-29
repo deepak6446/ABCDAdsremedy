@@ -32,7 +32,6 @@ func NewCountryService(cache cache.Cache, client CountryClient) CountryService {
 	}
 }
 
-// ... Search function remains the same ...
 // Search retrieves country information, using a cache-first strategy.
 func (s *countryService) Search(ctx context.Context, name string) (*domain.Country, error) {
 	// Normalize the key for caching

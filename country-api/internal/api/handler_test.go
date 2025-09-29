@@ -59,7 +59,7 @@ func TestSearchCountry_Success(t *testing.T) {
 	require.NoError(t, err)
 	assert.Equal(t, *mockCountry, respCountry)
 }
-//... other tests from before ...
+
 func TestSearchCountry_NoNameQuery(t *testing.T) {
 	handler := NewCountryHandler(nil) // Service won't be called
 	req := httptest.NewRequest(http.MethodGet, "/api/countries/search", nil)
@@ -104,7 +104,6 @@ func TestSearchCountry_ServiceReturnsInternalError(t *testing.T) {
 	assert.Equal(t, http.StatusInternalServerError, rr.Code)
 	assert.Contains(t, rr.Body.String(), "Internal server error")
 }
-
 
 // New test to cover the JSON encoding error path
 func TestSearchCountry_EncodeError(t *testing.T) {

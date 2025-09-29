@@ -64,7 +64,6 @@ func (c *RestCountriesClient) GetCountryByName(ctx context.Context, name string)
 	return mapToDomain(apiResponse[0])
 }
 
-// ... mapToDomain function remains the same ...
 // mapToDomain converts the complex API response to our simple domain model.
 func mapToDomain(data map[string]interface{}) (*domain.Country, error) {
 	// Name

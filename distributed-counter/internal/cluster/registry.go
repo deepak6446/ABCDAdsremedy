@@ -40,7 +40,7 @@ func NewRegistry(selfID string, client HTTPClient) *Registry {
 		httpClient: client,
 	}
 }
-// ... The rest of the registry.go file remains exactly the same ...
+
 // Start begins the background tasks for announcing, heartbeating, and peer management.
 func (r *Registry) Start(initialPeers []string) {
 	// Add self to the peer list

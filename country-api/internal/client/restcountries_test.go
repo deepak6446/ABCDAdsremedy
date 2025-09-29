@@ -32,7 +32,7 @@ func TestGetCountryByName_Success(t *testing.T) {
 	assert.Equal(t, "€", country.Currency)
 	assert.Equal(t, int64(83240525), country.Population)
 }
-// ... all other tests in this file follow the same pattern ...
+
 func TestGetCountryByName_NotFound(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusNotFound)

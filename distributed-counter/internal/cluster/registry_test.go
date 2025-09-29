@@ -44,7 +44,7 @@ func TestRegistry_StartAndAnnounce(t *testing.T) {
 
 	assert.Contains(t, r.peers, "self:8080")
 }
-// ... Rest of registry_test.go is now correct and will compile ...
+
 func TestRegistry_HandleJoinRequest(t *testing.T) {
 	r := NewRegistry("self:8080", nil) // Pass nil for client as it's not used in this function
 	r.addPeer(Peer{ID: "self:8080", Addr: "self:8080"})
