@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	heartbeatInterval = 5 * time.Second
+	heartbeatInterval = 1 * time.Second
 	peerExpiryTimeout = 15 * time.Second
 )
 
@@ -134,6 +134,7 @@ func (r *Registry) sendHeartbeats() {
 			if err != nil {
 				log.Printf("Failed to send heartbeat to %s: %v", addr, err)
 			}
+			log.Printf("sendHeartbeats to %s", addr)
 		}(peerAddr)
 	}
 }
